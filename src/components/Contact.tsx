@@ -1,10 +1,12 @@
+
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
+import { Mail, MapPin, Linkedin, Github } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +15,7 @@ export const Contact = () => {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -22,7 +25,7 @@ export const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -34,19 +37,45 @@ export const Contact = () => {
       return;
     }
 
-    // Simulate form submission
-    toast({
-      title: "Message sent successfully!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
+    setIsSubmitting(true);
 
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        'service_ykoy3xb', // Service ID
+        'template_69wbpay', // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject || 'Contact Form Submission',
+          message: formData.message,
+          to_name: 'Vipsak Anasagara',
+        },
+        'kGOHS0xOP3IF6CtiC' // Public Key
+      );
+
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: "Failed to send message",
+        description: "There was an error sending your message. Please try again or contact me directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -161,6 +190,7 @@ export const Contact = () => {
                       onChange={handleInputChange}
                       placeholder="Your full name"
                       required
+                      disabled={isSubmitting}
                       className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                     />
                   </div>
@@ -176,6 +206,7 @@ export const Contact = () => {
                       onChange={handleInputChange}
                       placeholder="your.email@example.com"
                       required
+                      disabled={isSubmitting}
                       className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                     />
                   </div>
@@ -192,6 +223,7 @@ export const Contact = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     placeholder="What's this about?"
+                    disabled={isSubmitting}
                     className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                   />
                 </div>
@@ -208,15 +240,17 @@ export const Contact = () => {
                     placeholder="Tell me about your project or inquiry..."
                     rows={5}
                     required
+                    disabled={isSubmitting}
                     className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                   />
                 </div>
 
                 <Button 
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 rounded-lg transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 rounded-lg transition-all duration-300 disabled:opacity-50"
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </CardContent>
