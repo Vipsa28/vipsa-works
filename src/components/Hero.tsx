@@ -25,10 +25,12 @@ export const Hero = () => {
           <div className="flex justify-center mb-8">
             <div className="relative">
               <div className="w-48 h-48 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
-                <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                  <div className="w-44 h-44 rounded-full bg-gradient-to-r from-gray-200 to-gray-300 flex items-center justify-center text-gray-600 text-lg font-medium">
-                    Vipsa K.
-                  </div>
+                <div className="w-full h-full rounded-full bg-white p-1">
+                  <img 
+                    src="https://i.postimg.cc/BQXxkKWK/pp.jpg" 
+                    alt="Vipsa Kanasagara"
+                    className="w-full h-full rounded-full object-cover"
+                  />
                 </div>
               </div>
               <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center border-4 border-white">
