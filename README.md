@@ -44,7 +44,6 @@ ASP.NET + SQL Server based complaint tracking system.
 
 - 📍 Parker, CO
 - 📧 vipsak28@gmail.com
-- 📞 720-326-0619
 - 🔗 [LinkedIn](https://www.linkedin.com/in/vipsakanasagara/)
 - 💻 [GitHub](https://github.com/YOUR-GITHUB-USERNAME)
 
