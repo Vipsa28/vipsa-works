@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -56,12 +55,6 @@ export const Contact = () => {
       label: "Email",
       value: "vipsak28@gmail.com",
       href: "mailto:vipsak28@gmail.com"
-    },
-    {
-      icon: <Phone size={20} className="text-green-600" />,
-      label: "Phone",
-      value: "(720) 326-0619",
-      href: "tel:+17203260619"
     },
     {
       icon: <MapPin size={20} className="text-red-600" />,
