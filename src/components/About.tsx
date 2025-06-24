@@ -1,9 +1,6 @@
-
 import { GraduationCap, MapPin } from "lucide-react";
-
 export const About = () => {
-  return (
-    <section id="about" className="py-20 bg-white">
+  return <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
@@ -14,7 +11,7 @@ export const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div className="space-y-4">
-                <h3 className="text-2xl font-semibold text-gray-900">Passionate Developer & Student</h3>
+                <h3 className="text-2xl font-semibold text-gray-900">Passionate Developer</h3>
                 <p className="text-gray-600 leading-relaxed">
                   I'm a dedicated Frontend Developer and graduate student pursuing a Master's in Information Technology and Management at the Illinois Institute of Technology. My passion lies in creating intuitive, scalable, and user-friendly web interfaces that deliver exceptional user experiences.
                 </p>
@@ -66,6 +63,5 @@ export const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
