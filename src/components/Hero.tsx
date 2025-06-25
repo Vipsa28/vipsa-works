@@ -32,16 +32,16 @@ export const Hero = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center space-y-12 animate-fade-in">
-          {/* Enhanced Profile Image with Modern Frame */}
+          {/* Enhanced Profile Image with Modern Frame - FIXED */}
           <div className="flex justify-center mb-12">
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full p-1 animate-pulse"></div>
               <div className="relative w-56 h-56 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1 group-hover:scale-105 transition-transform duration-300">
-                <div className="w-full h-full rounded-full bg-white p-1.5">
+                <div className="w-full h-full rounded-full bg-white p-1.5 overflow-hidden">
                   <img 
                     src="https://i.postimg.cc/BQXxkKWK/pp.jpg" 
                     alt="Vipsa Kanasagara"
-                    className="w-full h-full rounded-full object-cover shadow-lg"
+                    className="w-full h-full rounded-full object-cover object-center shadow-lg"
                   />
                 </div>
               </div>
