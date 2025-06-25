@@ -41,7 +41,7 @@ export const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center animate-fade-in">
           {/* Left Side - Profile Image */}
-          <div className="flex justify-center lg:justify-start">
+          <div className="flex justify-center lg:justify-start mx-[11px]">
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full p-1 animate-pulse"></div>
               <div className="relative w-80 h-80 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1 group-hover:scale-105 transition-transform duration-300">
