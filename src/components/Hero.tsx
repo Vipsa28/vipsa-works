@@ -75,7 +75,7 @@ export const Hero = () => {
               
               <div className="space-y-4">
                 <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 leading-relaxed">
-                  Frontend Developer & Graduate Student
+                  Frontend Developer 
                 </h2>
                 
                 <p className="text-lg text-gray-600 leading-relaxed">
