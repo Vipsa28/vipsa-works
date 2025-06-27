@@ -3,7 +3,8 @@
 Welcome to my personal frontend developer portfolio, showcasing my skills, projects, and background in modern web technologies.
 
 ## 🚀 Live Demo
-🔗 [Visit My Portfolio](https://vipsa-works.lovable.app)
+
+🔗 [Visit My Portfolio](https://vipsa-portfolio)
 
 ---
 
@@ -26,16 +27,22 @@ I'm **Vipsa Kanasagara**, a passionate Frontend Developer and graduate student a
 ## 📁 Projects Featured
 
 ### 🌾 Agro Solutions
+
 A React and MySQL-based system helping farmers access agricultural resources.
+
 - Agile-based development, responsive UI
 - Optimized backend logic and data fetching
 
 ### 🥦 E-Vege (Online Vegetable Market)
+
 An e-commerce platform built with Java (Servlets, JSP) and MySQL.
+
 - Secure authentication, REST APIs, MVC architecture
 
 ### 🛠️ Technical Endorsement System
+
 ASP.NET + SQL Server based complaint tracking system.
+
 - Email notifications, PDF reports, role-based access
 
 ---
@@ -58,3 +65,4 @@ git clone <YOUR_GIT_URL>
 cd <YOUR_PROJECT_DIRECTORY>
 npm install
 npm run dev
+```
